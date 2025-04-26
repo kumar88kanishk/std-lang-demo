@@ -64,3 +64,8 @@ clj꞉std-lang-demo.js-tryouts꞉> 
 <Timeout>
 [object Object]
 clj꞉std-lang-demo.js-tryouts꞉> 
+; ["Clay make current namespace as " "[:html]" "/Users/kanishkkumar/Workspace/std-lang-demo/test/std_lang_demo/js_tryouts.clj"]
+; Clay serving at http://localhost:1971/
+; Clay wrote:  docs/std_lang_demo.js_tryouts.html
+#flare/html {:url "http://localhost:1971/", :key "clay", :title "Clay", :reveal false, :info [[[[:wrote "docs/std_lang_demo.js_tryouts.html"] nil]] nil nil]}
+clj꞉std-lang-demo.js-tryouts꞉> 

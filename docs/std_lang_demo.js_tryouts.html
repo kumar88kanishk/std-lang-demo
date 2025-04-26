@@ -50,172 +50,157 @@
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" rel="stylesheet" type="text/css" />
 <title>Clay</title></head><body data-spy="scroll" data-target="#toc" style="margin:auto;">
 <script src="std_lang_demo.js_tryouts_files/html-default0.js" type="text/javascript"></script><script src="std_lang_demo.js_tryouts_files/html-default1.js" type="text/javascript"></script><script src="std_lang_demo.js_tryouts_files/katex2.js" type="text/javascript"></script>
-<div class="container"><div class="row"><div class="col-sm-12"><div><div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">
-#error {
- :class   clojure.lang.ExceptionInfo
- :message &quot;Not a valid input&quot;
- :data    {:input &quot;a&quot;, :all [], :curr {:modifiers [:let]}}
- :trace
- [[std.lang.base.emit-helper/emit-typed-args             &quot;emit_helper.clj&quot; 245]
-  [std.lang.base.emit-assign/emit-def-assign             &quot;emit_assign.clj&quot; 93]
-  [Var.invoke                                            &quot;Var.java&quot; 406]
-  [std.lang.base.emit-common/emit-op                     &quot;emit_common.clj&quot; 838]
-  [std.lang.base.emit-top-level/emit-form                &quot;emit_top_level.clj&quot; 124]
-  [std.lang.base.emit-common/emit-common-loop/output-fn  &quot;emit_common.clj&quot; 887]
-  [std.lang.base.emit-common/emit-common-loop            &quot;emit_common.clj&quot; 894]
-  [std.lang.base.emit/emit-main-loop                     &quot;emit.clj&quot; 40]
-  [std.lang.base.emit-common/emit-array/fn               &quot;emit_common.clj&quot; 177]
-  [clojure.core/map/fn                                   &quot;core.clj&quot; 2772]
-  [LazySeq.sval                                          &quot;LazySeq.java&quot; 42]
-  [LazySeq.seq                                           &quot;LazySeq.java&quot; 51]
-  [RT.seq                                                &quot;RT.java&quot; 535]
-  [clojure.core/seq                                      &quot;core.clj&quot; 139]
-  [clojure.core/map/fn                                   &quot;core.clj&quot; 2763]
-  [LazySeq.sval                                          &quot;LazySeq.java&quot; 42]
-  [LazySeq.seq                                           &quot;LazySeq.java&quot; 51]
-  [LazySeq.first                                         &quot;LazySeq.java&quot; 73]
-  [RT.first                                              &quot;RT.java&quot; 692]
-  [clojure.core/first                                    &quot;core.clj&quot; 55]
-  [std.string.common/joinl                               &quot;common.clj&quot; 63]
-  [std.string.common/join                                &quot;common.clj&quot; 84]
-  [std.lang.base.emit-block/emit-params-statement/fn     &quot;emit_block.clj&quot; 99]
-  [clojure.core/map/fn                                   &quot;core.clj&quot; 2770]
-  [LazySeq.sval                                          &quot;LazySeq.java&quot; 42]
-  [LazySeq.seq                                           &quot;LazySeq.java&quot; 51]
-  [LazySeq.first                                         &quot;LazySeq.java&quot; 73]
-  [RT.first                                              &quot;RT.java&quot; 692]
-  [clojure.core/first                                    &quot;core.clj&quot; 55]
-  [std.string.common/joinl                               &quot;common.clj&quot; 63]
-  [std.string.common/join                                &quot;common.clj&quot; 84]
-  [std.lang.base.emit-block/emit-params-statement        &quot;emit_block.clj&quot; 93]
-  [std.lang.base.emit-block/emit-params                  &quot;emit_block.clj&quot; 111]
-  [std.lang.base.emit-block/emit-block-standard          &quot;emit_block.clj&quot; 211]
-  [std.lang.base.emit-block/emit-block                   &quot;emit_block.clj&quot; 231]
-  [Var.invoke                                            &quot;Var.java&quot; 399]
-  [std.lang.base.emit-common/emit-common-loop/output-fn  &quot;emit_common.clj&quot; 887]
-  [std.lang.base.emit-common/emit-common-loop            &quot;emit_common.clj&quot; 894]
-  [std.lang.base.emit/emit-main-loop                     &quot;emit.clj&quot; 40]
-  [std.lang.base.emit-common/emit-macro                  &quot;emit_common.clj&quot; 164]
-  [std.lang.base.emit-common/emit-op                     &quot;emit_common.clj&quot; 820]
-  [std.lang.base.emit-top-level/emit-form                &quot;emit_top_level.clj&quot; 124]
-  [std.lang.base.emit-common/emit-common-loop/output-fn  &quot;emit_common.clj&quot; 887]
-  [std.lang.base.emit-common/emit-common-loop            &quot;emit_common.clj&quot; 894]
-  [std.lang.base.emit/emit-main-loop                     &quot;emit.clj&quot; 40]
-  [std.lang.base.emit-common/emit-array/fn               &quot;emit_common.clj&quot; 177]
-  [clojure.core/map/fn                                   &quot;core.clj&quot; 2772]
-  [LazySeq.sval                                          &quot;LazySeq.java&quot; 42]
-  [LazySeq.seq                                           &quot;LazySeq.java&quot; 51]
-  [LazySeq.first                                         &quot;LazySeq.java&quot; 73]
-  [RT.first                                              &quot;RT.java&quot; 692]
-  [clojure.core/first                                    &quot;core.clj&quot; 55]
-  [std.string.common/joinl                               &quot;common.clj&quot; 63]
-  [std.string.common/join                                &quot;common.clj&quot; 84]
-  [std.lang.base.emit-common/emit-return-base            &quot;emit_common.clj&quot; 387]
-  [std.lang.base.emit-common/emit-return                 &quot;emit_common.clj&quot; 412]
-  [std.lang.base.emit-common/emit-op                     &quot;emit_common.clj&quot; 819]
-  [std.lang.base.emit-top-level/emit-form                &quot;emit_top_level.clj&quot; 124]
-  [std.lang.base.emit-common/emit-common-loop/output-fn  &quot;emit_common.clj&quot; 887]
-  [std.lang.base.emit-common/emit-common-loop            &quot;emit_common.clj&quot; 894]
-  [std.lang.base.emit/emit-main-loop                     &quot;emit.clj&quot; 40]
-  [std.lang.base.emit-block/emit-statement               &quot;emit_block.clj&quot; 16]
-  [std.lang.base.emit-block/emit-do/fn                   &quot;emit_block.clj&quot; 30]
-  [clojure.core/map/fn                                   &quot;core.clj&quot; 2770]
-  [LazySeq.sval                                          &quot;LazySeq.java&quot; 42]
-  [LazySeq.seq                                           &quot;LazySeq.java&quot; 51]
-  [RT.seq                                                &quot;RT.java&quot; 535]
-  [clojure.core/seq                                      &quot;core.clj&quot; 139]
-  [clojure.core/filter/fn                                &quot;core.clj&quot; 2826]
-  [LazySeq.sval                                          &quot;LazySeq.java&quot; 42]
-  [LazySeq.seq                                           &quot;LazySeq.java&quot; 51]
-  [ChunkedCons.chunkedNext                               &quot;ChunkedCons.java&quot; 59]
-  [ChunkedCons.next                                      &quot;ChunkedCons.java&quot; 43]
-  [LazySeq.next                                          &quot;LazySeq.java&quot; 83]
-  [RT.next                                               &quot;RT.java&quot; 713]
-  [clojure.core/next                                     &quot;core.clj&quot; 64]
-  [std.string.common/joinl                               &quot;common.clj&quot; 64]
-  [std.string.common/join                                &quot;common.clj&quot; 84]
-  [std.lang.base.emit-block/emit-do                      &quot;emit_block.clj&quot; 28]
-  [std.lang.base.emit-block/emit-block-body/fn           &quot;emit_block.clj&quot; 60]
-  [std.lang.base.emit-block/emit-block-body              &quot;emit_block.clj&quot; 58]
-  [std.lang.base.emit-fn/emit-fn/fn                      &quot;emit_fn.clj&quot; 174]
-  [std.lang.base.emit-fn/emit-fn                         &quot;emit_fn.clj&quot; 173]
-  [std.lang.base.emit-top-level/emit-form                &quot;emit_top_level.clj&quot; 135]
-  [std.lang.base.emit-common/emit-common-loop/output-fn  &quot;emit_common.clj&quot; 887]
-  [std.lang.base.emit-common/emit-common-loop            &quot;emit_common.clj&quot; 894]
-  [std.lang.base.emit/emit-main-loop                     &quot;emit.clj&quot; 40]
-  [std.lang.base.emit-common/emit-array/fn               &quot;emit_common.clj&quot; 177]
-  [clojure.core/map/fn                                   &quot;core.clj&quot; 2770]
-  [LazySeq.sval                                          &quot;LazySeq.java&quot; 42]
-  [LazySeq.seq                                           &quot;LazySeq.java&quot; 51]
-  [RT.seq                                                &quot;RT.java&quot; 535]
-  [clojure.core/seq                                      &quot;core.clj&quot; 139]
-  [clojure.core/every?                                   &quot;core.clj&quot; 2696]
-  [std.lang.base.emit-data/emit-singleline-array?        &quot;emit_data.clj&quot; 64]
-  [std.lang.base.emit-data/emit-coll-layout              &quot;emit_data.clj&quot; 88]
-  [std.lang.base.emit-data/emit-coll                     &quot;emit_data.clj&quot; 115]
-  [std.lang.base.emit-data/emit-coll                     &quot;emit_data.clj&quot; 110]
-  [std.lang.base.emit-data/emit-data-standard            &quot;emit_data.clj&quot; 124]
-  [std.lang.base.emit-data/emit-data                     &quot;emit_data.clj&quot; 138]
-  [std.lang.base.emit-data/emit-quote                    &quot;emit_data.clj&quot; 153]
-  [Var.invoke                                            &quot;Var.java&quot; 406]
-  [std.lang.base.emit-common/emit-op                     &quot;emit_common.clj&quot; 838]
-  [std.lang.base.emit-top-level/emit-form                &quot;emit_top_level.clj&quot; 124]
-  [std.lang.base.emit-common/emit-common-loop/output-fn  &quot;emit_common.clj&quot; 887]
-  [std.lang.base.emit-common/emit-common-loop            &quot;emit_common.clj&quot; 894]
-  [std.lang.base.emit/emit-main-loop                     &quot;emit.clj&quot; 40]
-  [std.lang.base.emit-common/emit-wrapping               &quot;emit_common.clj&quot; 205]
-  [std.lang.base.emit-common/emit-invoke                 &quot;emit_common.clj&quot; 706]
-  [Var.invoke                                            &quot;Var.java&quot; 399]
-  [std.lang.base.emit-common/emit-common-loop/output-fn  &quot;emit_common.clj&quot; 887]
-  [std.lang.base.emit-common/emit-common-loop            &quot;emit_common.clj&quot; 894]
-  [std.lang.base.emit/emit-main-loop                     &quot;emit.clj&quot; 40]
-  [std.lang.base.emit/emit-main                          &quot;emit.clj&quot; 56]
-  [std.lang.base.emit/emit                               &quot;emit.clj&quot; 70]
-  [std.lang.base.impl/emit-direct                        &quot;impl.clj&quot; 128]
-  [std.lang.base.impl/emit-script                        &quot;impl.clj&quot; 270]
-  [std.lang.base.pointer/ptr-invoke-script               &quot;pointer.clj&quot; 233]
-  [std.lang.base.runtime/default-invoke-script           &quot;runtime.clj&quot; 186]
-  [rt.basic.type-basic/invoke-ptr-basic                  &quot;type_basic.clj&quot; 78]
-  [rt.basic.type-basic.RuntimeBasic/-invoke-ptr          &quot;type_basic.clj&quot; 97]
-  [std.lib.context.pointer/rt-invoke-ptr                 &quot;pointer.clj&quot; 75]
-  [std.lang.base.script-macro/intern-!-fn/fn             &quot;script_macro.clj&quot; 143]
-  [std.lang.base.script-macro/call-thunk                 &quot;script_macro.clj&quot; 134]
-  [std.lang.base.script-macro/intern-!-fn                &quot;script_macro.clj&quot; 141]
-  [std-lang-demo.js-tryouts/eval]
-  [Compiler.eval                                         &quot;Compiler.java&quot; 7194]
-  [Compiler.eval                                         &quot;Compiler.java&quot; 7149]
-  [clojure.core/eval                                     &quot;core.clj&quot; 3215]
-  [scicloj.clay.v2.notebook/complete                     &quot;notebook.clj&quot; 49]
-  [scicloj.clay.v2.notebook/items-and-test-forms/fn      &quot;notebook.clj&quot; 294]
-  [ArrayChunk.reduce                                     &quot;ArrayChunk.java&quot; 63]
-  [clojure.core.protocols/fn                             &quot;protocols.clj&quot; 136]
-  [clojure.core.protocols/fn/G                           &quot;protocols.clj&quot; 19]
-  [clojure.core.protocols/seq-reduce                     &quot;protocols.clj&quot; 31]
-  [clojure.core.protocols/fn                             &quot;protocols.clj&quot; 75]
-  [clojure.core.protocols/fn/G                           &quot;protocols.clj&quot; 13]
-  [clojure.core/reduce                                   &quot;core.clj&quot; 6886]
-  [scicloj.clay.v2.notebook/items-and-test-forms         &quot;notebook.clj&quot; 289]
-  [scicloj.clay.v2.make/handle-single-source-spec!       &quot;make.clj&quot; 318]
-  [clojure.core/mapv/fn                                  &quot;core.clj&quot; 6979]
-  [ArrayChunk.reduce                                     &quot;ArrayChunk.java&quot; 58]
-  [clojure.core.protocols/fn                             &quot;protocols.clj&quot; 136]
-  [clojure.core.protocols/fn/G                           &quot;protocols.clj&quot; 19]
-  [clojure.core.protocols/seq-reduce                     &quot;protocols.clj&quot; 31]
-  [clojure.core.protocols/fn                             &quot;protocols.clj&quot; 75]
-  [clojure.core.protocols/fn/G                           &quot;protocols.clj&quot; 13]
-  [clojure.core/reduce                                   &quot;core.clj&quot; 6886]
-  [clojure.core/mapv                                     &quot;core.clj&quot; 6970]
-  [scicloj.clay.v2.make/make!                            &quot;make.clj&quot; 404]
-  [scicloj.clay.v2.api/make!                             &quot;api.clj&quot; 35]
-  [scicloj.clay.v2.snippets/make-ns!                     &quot;snippets.clj&quot; 38]
-  [scicloj.clay.v2.snippets/make-ns-html!                &quot;snippets.clj&quot; 46]
-  [std-lang-demo.js-tryouts/eval]
-  [Compiler.eval                                         &quot;Compiler.java&quot; 7194]
-  [Compiler.eval                                         &quot;Compiler.java&quot; 7184]
-  [nrepl.middleware.interruptible-eval/evaluator/run/fn  &quot;interruptible_eval.clj&quot; 106]
-  [nrepl.middleware.interruptible-eval/evaluator/run     &quot;interruptible_eval.clj&quot; 101]
-  [nrepl.middleware.session/session-exec/session-loop    &quot;session.clj&quot; 230]
-  [SessionThread.run                                     &quot;SessionThread.java&quot; 21]]}</code></pre></div></div></div></div></div></div></div><script type="text/javascript">/*!
+<div class="container"><div class="row"><div class="col-sm-12"><div><div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(ns std-lang-demo.js-tryouts
+  (:use code.test)
+  (:require [std.lang :as l]
+            [clojure.math :as math]
+            [scicloj.kindly.v4.kind :as kind]))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(l/script- :js
+           {:runtime :basic
+            :require [[xt.lang.base-lib :as k]
+                      [xt.lang.base-macro :as km]]})</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{:id &quot;t8f80tfrulv8&quot;,
+ :layout :full,
+ :bench
+ {:type :bench/basic,
+  :lang :js,
+  :program nil,
+  :port 49493,
+  :host &quot;127.0.0.1&quot;,
+  :process
+  #object[java.lang.ProcessImpl 0x66aedca9 &quot;Process[pid=4488, exitValue=\&quot;not exited\&quot;]&quot;],
+  :thread
+  #object[java.util.concurrent.CompletableFuture 0x319d4d38 &quot;java.util.concurrent.CompletableFuture@319d4d38[Not completed]&quot;],
+  :root-dir
+  &quot;/var/folders/5d/nthywx392z932vmzp_y55_k40000gn/T/9951446046891034696&quot;},
+ :process
+ {:bootstrap #&apos;rt.basic.impl.process-js/default-basic-client,
+  :main {},
+  :emit
+  {:body {:transform #&apos;std.lang.base.runtime/return-transform},
+   :lang/imports :global},
+  :json :full,
+  :encode :json,
+  :timeout 2000},
+ :lifecycle
+ {:bootstrap #&apos;rt.basic.impl.process-js/default-basic-client,
+  :main {},
+  :emit
+  {:body {:transform #&apos;std.lang.base.runtime/return-transform},
+   :lang/imports :global},
+  :json :full,
+  :encode :json,
+  :timeout 2000},
+ :module std-lang-demo.js-tryouts,
+ :lang :js,
+ :module/internal
+ {xt.lang.base-lib k,
+  xt.lang.base-macro km,
+  std-lang-demo.js-tryouts -},
+ :runtime :basic,
+ :context :lang/js,
+ :module/primary #{},
+ :tag :basic}
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(k/capitalize &quot;hello&quot;)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">&quot;Hello&quot;
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js 3)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">3
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (fn []
+        (return (+ 1 2 3))))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&lt;Wrapped@1b07921c: &quot;function (){\n    return 1 + 2 + 3;\n  }&quot;&gt;
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (fn []
+        (return (- 8 7 6 5))))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&lt;Wrapped@4f762b36: &quot;function (){\n    return 8 - 7 - 6 - 5;\n  }&quot;&gt;
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (fn []
+        (return (* 2 3 4))))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&lt;Wrapped@3b3aa3db: &quot;function (){\n    return 2 * 3 * 4;\n  }&quot;&gt;
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (fn []
+        (return (/ 8 4))))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&lt;Wrapped@1e47dc30: &quot;function (){\n    return 8 / 4;\n  }&quot;&gt;
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (fn []
+        (return (mod 8 3))))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&lt;Wrapped@3d02346d: &quot;function (){\n    return 8 % 3;\n  }&quot;&gt;
+</code></pre></div></div><div style="margin:15px;"><div><p>Using clojure pow which should not work This demonstrates an attempt to use Clojure's <code>math.pow</code> function in a JavaScript context. Since <code>math.pow</code> is a Clojure function, it is not compatible with JavaScript execution.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (fn []
+        (return (math.pow 2 3))))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&lt;Wrapped@423a4ad7: &quot;function (){\n    return math.pow(2,3);\n  }&quot;&gt;
+</code></pre></div></div><div style="margin:15px;"><div><p>Using javascript math.pow instead of Math/pow This demonstrates the correct way to use JavaScript's <code>Math.pow</code> function in the script.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (fn []
+        (return (math.pow 2 3))))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&lt;Wrapped@4dff8e7e: &quot;function (){\n    return math.pow(2,3);\n  }&quot;&gt;
+</code></pre></div></div><div style="margin:15px;"><div><p>Using std lang pow method This demonstrates the use of the <code>k/pow</code> function from the <code>std.lang</code> library, which is likely a cross-language utility for performing power calculations.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (fn []
+        (return (k/pow 2 3))))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&lt;Wrapped@72dd5cb0: &quot;function (){\n    return Math.pow(2,3);\n  }&quot;&gt;
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (== 3 &quot;3&quot;))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">true
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (=== 3 &quot;3&quot;))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">false
+</code></pre></div></div><div style="margin:15px;"><div><p>Setting a var in js</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(def.js a 10)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&apos;std-lang-demo.js-tryouts/a
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">a</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">;; (note: the following value could not be pretty-printed)![:lang/js :basic std-lang-demo.js-tryouts/a :code]
+var a = 10;
+</code></pre></div></div><div style="margin:15px;"><div><p>Defining a JavaScript function using the <code>defn.js</code> macro. This macro enables the creation of JavaScript functions directly in Clojure code. The function can then be invoked as if it were a native JavaScript function.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(defn.js hello
+  &quot;Hello, world!&quot;
+  []
+  (return &quot;Hello, world!&quot;))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&apos;std-lang-demo.js-tryouts/hello
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(hello)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">&quot;Hello, world!&quot;
+</code></pre></div></div><div style="margin:15px;"><div><p>Defining an equal function and using k/pow fn This defines a JavaScript function (<code>equal?</code>) using the <code>defn.js</code> macro to check if two values are equal. It also demonstrates the use of the <code>k/pow</code> function for power calculations.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(defn.js equal?
+  &quot;Check if two values are equal.&quot;
+  [a b]
+  (return (k/eq a b)))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&apos;std-lang-demo.js-tryouts/equal?
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(equal? 1 1)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">true
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(k/eq 1 2)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">false
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(k/starts-with? &quot;Hello&quot; &quot;he&quot;)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">false
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(defn.js match-capitalize
+  &quot;Check if a value is a string.&quot;
+  [s m1 m2]
+  (if (and (k/starts-with? s m1)
+           (k/ends-with? s m2))
+    (return (k/capitalize s))
+    (return false)))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&apos;std-lang-demo.js-tryouts/match-capitalize
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(match-capitalize &quot;hello&quot; &quot;he&quot; &quot;lo&quot;)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">&quot;Hello&quot;
+</code></pre></div></div><div style="margin:15px;"><div><p>Fun with arrays This section explores various operations on arrays using the <code>std.lang</code> library. Arrays are immutable and of variable length, and the operations include mapping, reversing, slicing, pushing, and grouping elements.</p><p>Arrays are immutable and of variable length.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(def a (k/arrayify [&quot;hello&quot; &quot;he&quot; &quot;lo&quot; &quot;world&quot;]))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">a</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">[&quot;hello&quot; &quot;he&quot; &quot;lo&quot; &quot;world&quot;]
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(defn.js arr-fun
+  &quot;Capitalize and reverse the array.&quot;
+  [arr]
+  (return (k/arr-reverse (k/arr-map arr
+                                    (fn [x]
+                                      (return (k/capitalize x)))))))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&apos;std-lang-demo.js-tryouts/arr-fun
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(arr-fun a)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">[&quot;World&quot; &quot;Lo&quot; &quot;He&quot; &quot;Hello&quot;]
+</code></pre></div></div><div style="margin:15px;"><div><p>Push element from start Demonstrates adding an element to the start of an array using <code>k/arr-pushr</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(k/arr-pushr a &quot;new&quot;)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">[&quot;new&quot; &quot;hello&quot; &quot;he&quot; &quot;lo&quot; &quot;world&quot;]
+</code></pre></div></div><div style="margin:15px;"><div><p>Push element from end Demonstrates adding an element to the end of an array using <code>k/arr-pushl</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(k/arr-pushl a &quot;new&quot;)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">[&quot;hello&quot; &quot;he&quot; &quot;lo&quot; &quot;world&quot; &quot;new&quot;]
+</code></pre></div></div><div style="margin:15px;"><div><p>Rest of array except first Demonstrates slicing an array to exclude the first element using <code>k/arr-slice</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(k/arr-slice a 1 (k/len a))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">[&quot;he&quot; &quot;lo&quot; &quot;world&quot;]
+</code></pre></div></div><div style="margin:15px;"><div><p>Pop element from start Demonstrates retrieving the first element of an array using <code>k/first</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(k/first a)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">&quot;hello&quot;
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(k/arr-group-by [[&quot;a&quot; 1] [&quot;a&quot; 2] [&quot;b&quot; 3] [&quot;b&quot; 4]]
+                k/first
+                k/second)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{&quot;a&quot; [1 2], &quot;b&quot; [3 4]}
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(k/arr-lookup a)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{&quot;hello&quot; true, &quot;lo&quot; true, &quot;he&quot; true, &quot;world&quot; true}
+</code></pre></div></div><div style="margin:15px;"><div><p>Checks that every element fulfills the predicate Demonstrates checking if all elements in an array satisfy a predicate using <code>k/arr-every</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js
+ [(k/arr-every [1 2 3] km/odd?)
+  (k/arr-every [1 3] km/odd?)])</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">[false true]
+</code></pre></div></div><div style="margin:15px;"><div><p>Checks that the array contains an element Demonstrates checking if any element in an array satisfies a predicate using <code>k/arr-some</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js
+ [(k/arr-some [1 2 3] km/even?)
+  (k/arr-some [1 3] km/even?)])</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">[true false]
+</code></pre></div></div><div style="margin:15px;"><div><p>Performs a function call for each element Demonstrates iterating over an array and applying a function to each element using <code>k/arr-each</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js
+ (var a := [])
+ (k/arr-each [1 2 3 4 5] (fn [e]
+                           (k/arr-pushr a (+ 1 e))))
+ a)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">[6 5 4 3 2]
+</code></pre></div></div><div style="margin:15px;"><div><p>Assign Values to javascript objects Demonstrates assigning values to a JavaScript object and checking if it is empty using <code>k/obj-empty?</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js
+ (var a := {:key1 &quot;Hello&quot; :key2 &quot;World&quot;})
+ (if (k/obj-empty? a)
+   (k/obj-assign a {:empty &quot;empty&quot;})
+   (k/obj-assign a {:not-empty &quot;not empty&quot;}))
+ a)</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{&quot;key2&quot; &quot;World&quot;, &quot;key1&quot; &quot;Hello&quot;, &quot;not_empty&quot; &quot;not empty&quot;}
+</code></pre></div></div><div style="margin:15px;"><div><p>Merges objects at a nesting level Demonstrates merging two objects at a nested level using <code>k/obj-assign-nested</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js
+ [(k/obj-assign-nested {:a 1}
+                       {:b 2})
+  (k/obj-assign-nested {:a {:b {:c 1}}}
+                       {:a {:b {:d 1 :e {:f 1}}}})])</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">[{&quot;a&quot; 1, &quot;b&quot; 2} {&quot;a&quot; {&quot;b&quot; {&quot;d&quot; 1, &quot;e&quot; {&quot;f&quot; 1}, &quot;c&quot; 1}}}]
+</code></pre></div></div><div style="margin:15px;"><div><p>Creates a nested object Demonstrates creating a nested object from a list of keys and a value using <code>k/obj-nest</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (k/obj-nest [&quot;a&quot; &quot;b&quot; &quot;c&quot;] 23))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{&quot;a&quot; {&quot;b&quot; {&quot;c&quot; 23}}}
+</code></pre></div></div><div style="margin:15px;"><div><p>Delete multiple keys Demonstrates deleting multiple keys from an object using <code>k/obj-del</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (k/obj-del {:a 1 :b 2 :c 3}
+                 [&quot;a&quot; &quot;b&quot;]))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{&quot;c&quot; 3}
+</code></pre></div></div><div style="margin:15px;"><div><p>Delete a key Demonstrates deleting a single key from an object using <code>k/obj-del</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (k/obj-del {:a 1 :b 2 :c 3}
+                 &quot;a&quot;))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{&quot;b&quot; 2, &quot;c&quot; 3}
+</code></pre></div></div><div style="margin:15px;"><div><p>Delete all keys Demonstrates deleting all keys from an object using <code>k/obj-del-all</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (k/obj-del-all {:a 1 :b 2 :c 3}))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{}
+</code></pre></div></div><div style="margin:15px;"><div><p>Select keys in object Demonstrates selecting specific keys from an object using <code>k/obj-pick</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (k/obj-pick {:a 1 :b 2 :c 3}
+                  [&quot;a&quot; &quot;b&quot;]))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{&quot;a&quot; 1, &quot;b&quot; 2}
+</code></pre></div></div><div style="margin:15px;"><div><p>New object with missing keys Demonstrates creating a new object by omitting specific keys using <code>k/obj-omit</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (k/obj-omit {:a 1 :b 2 :c 3}
+                  [&quot;a&quot; &quot;b&quot;]))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{&quot;c&quot; 3}
+</code></pre></div></div><div style="margin:15px;"><div><p>Obj-transposes a map Demonstrates transposing the keys and values of a map using <code>k/obj-transpose</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js (k/obj-transpose {:a &quot;x&quot; :b &quot;y&quot; :c &quot;z&quot;}))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{&quot;z&quot; &quot;c&quot;, &quot;x&quot; &quot;a&quot;, &quot;y&quot; &quot;b&quot;}
+</code></pre></div></div><div style="margin:15px;"><div><p>Maps a function across the values of an object Demonstrates applying a function to all values in an object using <code>k/obj-map</code>.</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js
+ (k/obj-map {:a 1 :b 2 :c 3}
+            km/inc))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">{&quot;a&quot; 2, &quot;b&quot; 3, &quot;c&quot; 4}
+</code></pre></div></div><div style="margin:15px;"><div><p>Facing issue with for loop (!.js (var a:= "") (k/for:array [[i] [1 2 3]] (+ a i)) (return a))</p><p>Facing issue with switch (!.js (var a := "B") (return (cond (= a "A") (console.log "A") (= a "B") (console.log "B") (= a "C") (console.log "C"))))</p><p>Need more clarity</p></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(!.js
+ (setTimeout (fn [x] x)
+                5000))</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure printed-clojure">#&lt;Wrapped@229c2d5f: &quot;[object Object]&quot;&gt;
+</code></pre></div></div><div style="margin:15px;"><div><pre><code class="sourceCode language-clojure source-clojure bg-light">(comment a
+         (k/second a)
+         (k/len a)
+         (k/arr-slice a 1 (k/len a)))</code></pre></div></div><div style="margin:15px;"><div style="background-color:grey;height:2px;width:100%;"></div></div><div style="margin:15px;"><div><pre><small><small>source: test/std_lang_demo/js_tryouts.clj</small></small></pre></div></div></div></div></div></div></div><script type="text/javascript">/*!
   Highlight.js v11.9.0 (git: b7ec4bfafc)
   (c) 2006-2023 undefined and other contributors
   License: BSD-3-Clause
