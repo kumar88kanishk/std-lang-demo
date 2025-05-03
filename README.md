@@ -7,6 +7,8 @@ std.lang creates an environment where multiple languages and multiple runtimes c
 
 When the benefits of repl driven development can be made available to any language, programming then becomes about the code itself and not everything around making the code work
 
+https://github.com/zcaudate-xyz/foundation-base
+
 ## Usage
 
 FIXME
