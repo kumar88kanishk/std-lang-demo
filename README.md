@@ -1,6 +1,11 @@
 # std-lang-demo
 
-A Clojure library designed to ... well, that part is up to you.
+Handson Clojure std.lang Multi transpiler library designed to be A Playground for Languages
+There are so many languages currently out there is the world. Every single one of them has their own quirks but each are inspired by one another.
+
+std.lang creates an environment where multiple languages and multiple runtimes can be mixed, matched and integrated to get the basic minimum piece of code working.
+
+When the benefits of repl driven development can be made available to any language, programming then becomes about the code itself and not everything around making the code work
 
 ## Usage
 
